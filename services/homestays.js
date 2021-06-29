@@ -19,6 +19,15 @@ function add(values,tableName){
     return insert(values,tableName)
 }
 
+//删除
+function del(id,tableName){
+  return deleteSql(id,tableName)
+}
+
+//编辑
+function update(values,tableName,id){
+  return updateSql(values,tableName,`where id='${id}'`)
+}
   module.exports = {
-    findInfo,add
+    findInfo,add,del,update
   }
